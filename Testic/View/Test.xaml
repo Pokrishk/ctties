@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Testic"
+      xmlns:local="clr-namespace:Testic" xmlns:viewmodel="clr-namespace:Testic.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Test">
@@ -21,10 +21,10 @@
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="first" Grid.Column="1" Grid.Row="2" Click="first_Click"/>
-        <Button x:Name="second" Grid.Column="1" Grid.Row="3" Click="second_Click"/>
-        <Button x:Name="_3" Grid.Column="1" Grid.Row="4" Click="_3_Click"/>
-        <TextBlock x:Name="Description" TextWrapping="Wrap" Text="TextBlock" Grid.Column="1" Grid.Row="1"/>
-        <TextBlock x:Name="Title" TextWrapping="Wrap" Text="TextBlock" Grid.Column="1" Grid.Row="0"/>
+        <Button Grid.Column="1" Grid.Row="2" Content="{Binding first}" Command="{Binding Command1}"/>
+        <Button Grid.Column="1" Grid.Row="3" Content="{Binding second}" Command="{Binding Command2}"/>
+        <Button Grid.Column="1" Grid.Row="4" Content="{Binding _3}" Command="{Binding Command3}"/>
+        <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" Text="{Binding Description}"/>
+        <TextBlock TextWrapping="Wrap" Grid.Column="1" Grid.Row="0" Text="{Binding Title}"/>
     </Grid>
 </Page>

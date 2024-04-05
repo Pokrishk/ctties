@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Testic"
         mc:Ignorable="d"
         Title="MainWindow" Height="375" Width="370">
     <Grid Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}">
@@ -22,7 +21,7 @@
         <Button Content="Пройти тест" HorizontalAlignment="Center" VerticalAlignment="Center" Height="31" Width="185" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Click="Button_Click" Grid.Row="2" Grid.Column="1"/>
         <Button Content="Редактировать тест" HorizontalAlignment="Center" VerticalAlignment="Center" Height="31" Width="186" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Click="Button_Click_1" Grid.Row="3" Grid.Column="1" />
         <TextBlock TextWrapping="Wrap" Text="Хотите пройти тест или редактировать его?" Height="60" VerticalAlignment="Top" Margin="10,10,10,0" Grid.Row="1" Grid.Column="1"/>
-        <TextBox x:Name="_1" TextWrapping="Wrap" Text="" Margin="0,6,0,0" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" IsEnabled="False" HorizontalAlignment="Center" FontSize="14" Width="166" OpacityMask="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" CaretBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" TextChanged="_1_TextChanged" Grid.Row="4" Grid.Column="1" Height="23" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" >
+        <TextBox x:Name="_1" TextWrapping="Wrap" Text="{Binding DisplayText}"  Margin="0,6,0,0" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}" IsEnabled="False" HorizontalAlignment="Center" FontSize="14" Width="166" OpacityMask="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" CaretBrush="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}" TextChanged="_1_TextChanged" Grid.Row="4" Grid.Column="1" Height="23" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" >
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1"/>
@@ -32,5 +31,6 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
+        <Button Content="Прикол" Height="30" Width="50" Command="{Binding Command}"/>
     </Grid>
 </Window>

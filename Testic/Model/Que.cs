@@ -23,5 +23,6 @@ namespace Testic
             Option3 = option3;
             CorrectAnswer = correctAnswer;
         }
+        public Que() { }
     }
 }

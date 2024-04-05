@@ -1,6 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,25 +17,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Testic.ViewModel.Helpers;
 
 namespace Testic
 {
-    public partial class NoTest : Page
+    public partial class RedTest : Page
     {
-        public NoTest()
+        public RedTest()
         {
+            DataContext = new MainWindowViewModel();
             InitializeComponent();
-        }
-
-        private void Button_Click1(object sender, RoutedEventArgs e)
-        {
-            (Application.Current.MainWindow as Window1).framee.Content = new RedTest();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow window = new MainWindow();
-            window.Show();
         }
     }
 }

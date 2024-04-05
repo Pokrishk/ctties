@@ -20,12 +20,7 @@ namespace Testic
         public Window1()
         {
             InitializeComponent();
-            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string path = desktopPath + "\\aaa.json";
-            if (!Pust(path))
-            {
-                framee.Content = new NoTest();
-            }
+            DataContext = new MainWindowViewModel();
         }
         private void Button_Click2(object sender, RoutedEventArgs e)
         {
@@ -42,18 +37,6 @@ namespace Testic
             MainWindow window = new MainWindow();
             window.Show();
             Close();
-        }
-        private bool Pust(string path)
-        {
-            List<Que> dataList = serdes.Des<List<Que>>(path);
-            if (dataList == null || dataList.Count == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
         }
     }
 }
